@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Pacientes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Bienvenido a la Gestión de Pacientes</h1>
+  <a href="/logout">Cerrar Sesión</a>
+  <p>Esta es una página básica para administrar pacientes y sus signos vitales.</p>
+<form action="/submit-data" method="POST">
+  <label for="name">Nombre del paciente:</label>
+  <input type="text" id="name" name="name">
+  
+  <label for="age">Edad:</label>
+  <input type="number" id="age" name="age">
+
+  <label for="heart-rate">Frecuencia Cardiaca (bpm):</label>
+  <input type="number" id="heart-rate" name="heart_rate">
+
+  <button type="submit">Guardar</button>
+</form>
+<h2>Buscar Pacientes</h2>
+<form action="/buscar-pacientes" method="GET">
+  <label for="name-search">Nombre del paciente:</label>
+  <input type="text" id="name-search" name="name_search">
+  
+  <label for="age-search">Edad del paciente:</label>
+  <input type="number" id="age-search" name="age_search">
+  
+  <button type="submit">Buscar</button>
+</form>
+<h2>Registrar Médico</h2>
+<form action="/insertar-medico" method="POST">
+  <label for="medico-name">Nombre del médico:</label>
+  <input type="text" id="medico-name" name="medico_name">
+
+  <label for="especialidad">Especialidad:</label>
+  <input type="text" id="especialidad" name="especialidad">
+
+  <button type="submit">Guardar Médico</button>
+</form>
+
+<button onclick="window.location.href='/ordenar-pacientes'">Ordenar por Frecuencia Cardiaca</button>
+<button onclick="window.location.href='/pacientes'">Ver Pacientes Guardados</button>
+</body>
+</html>
